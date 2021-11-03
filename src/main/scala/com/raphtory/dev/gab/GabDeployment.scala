@@ -1,6 +1,6 @@
 package com.raphtory.dev.gab
 
-import com.raphtory.algorithms.ConnectedComponents
+import com.raphtory.algorithms.{ConnectedComponents, IOMotifs}
 import com.raphtory.core.build.server.RaphtoryGraph
 import com.raphtory.dev.gab.graphbuilders.GabUserGraphBuilder
 import com.raphtory.spouts.FileSpout
@@ -11,6 +11,7 @@ object GabDeployment extends App{
   val rg = RaphtoryGraph[String](source,builder)
   val arguments = Array[String]()
   //rg.rangeQuery(TestAlgorithm(),start= 1470797917000L,end = 1476113868000L,increment = 86400000L,List(3600000L,86400000L,604800000L,2592000000L,31536000000L))
+  rg.pointQuery(IOMotifs("/Users/narnolddd/CODE/lotroutput"),timestamp = 1475971200000L)
 
   //rg.oldrangeQuery(ConnectedComponents(),new DefaultSerialiser, start= 1470797917000L,end = 1476113868000L,increment = 86400000L,windowBatch=List(3600000L,86400000L,604800000L,2592000000L,31536000000L))
   //rg.oldrangeQuery(new TriangleCount(Array()), new DefaultSerialiser, start=1470797917000L,
